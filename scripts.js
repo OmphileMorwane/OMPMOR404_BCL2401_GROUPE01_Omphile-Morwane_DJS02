@@ -24,5 +24,13 @@ form.addEventListener("submit", (event) => {
     result.innerText = "Division not performed. Both values are required in inputs. Try again";
     result.classList.add("error-message");
   }
+//Providing anything that is not a number should crash the program.
+else if (isNaN(dividend) || isNaN(divider)){
+  const div= document.createElement("div");
+  div.classList.add("critical-error");
+  div.textContent = "Something critical went wrong. Please reload page";
 
+
+}
+ 
 });
