@@ -30,7 +30,12 @@ else if (isNaN(dividend) || isNaN(divider)){
   div.classList.add("critical-error");
   div.textContent = "Something critical went wrong. Please reload page";
 
-
+ //Appending the div to the body
+ const body = document.querySelector("body");
+ body.appendChild(div);
+ throw new Error (
+   "Both inputs should be numbers"
+ )
 }
  
 });
