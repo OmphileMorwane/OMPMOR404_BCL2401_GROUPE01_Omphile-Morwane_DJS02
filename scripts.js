@@ -9,4 +9,14 @@ form.addEventListener("submit", (event) => {
   //Dividing numbers result in a decimal number
   result.innerText = Math.floor(dividend / divider);
   result.classList.remove("error-message");
+
+  //Throw error for invalid division
+  if (divider === "0") {
+    result.innerText = "Error: Invalid number provided. Try again!";
+    result.classList.add("error-message");
+    throw new Error (
+      "Invalid division, cannot use 0"
+    )
+  }
+
 });
