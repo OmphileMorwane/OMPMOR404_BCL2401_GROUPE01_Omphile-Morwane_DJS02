@@ -10,19 +10,19 @@ form.addEventListener("submit", (event) => {
   result.innerText = Math.floor(dividend / divider);
   result.classList.remove("error-message");
 
-  //Throw error for invalid division
-  if (divider === "0") {
+  //validation when values are missing
+  if (!dividend || !divider) {
+    result.innerText = "Division not performed. Both values are required in inputs. Try again";
+    result.classList.add("error-message");
+  }
+
+ //Throw error for invalid division
+  else if (divider === "0") {
     result.innerText = "Error: Invalid number provided. Try again!";
     result.classList.add("error-message");
     throw new Error (
       "Division not performed. Invalid number provided. Try again"
     )
-  }
-
-  //validation when values are missing
-  else if (!dividend || !divider) {
-    result.innerText = "Division not performed. Both values are required in inputs. Try again";
-    result.classList.add("error-message");
   }
 //Providing anything that is not a number should crash the program.
 else if (isNaN(dividend) || isNaN(divider)){
