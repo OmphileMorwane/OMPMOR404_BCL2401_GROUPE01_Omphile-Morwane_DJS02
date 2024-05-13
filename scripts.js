@@ -11,7 +11,7 @@ form.addEventListener("submit", (event) => {
   result.classList.remove("error-message");
 
   //validation when values are missing
-  if (!dividend || !divider) {
+  if (!dividend.trim || !divider.trim) {
     result.innerText = "Division not performed. Both values are required in inputs. Try again";
     result.classList.add("error-message");
   }
